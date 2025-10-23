@@ -1,0 +1,213 @@
+# AWS MCP Server Capabilities
+# Provides AWS CLI integration and documentation through Model Context Protocol
+
+task_groups:
+  - name: AWS MCP Server
+    description: >
+      Capabilities provided by the AWS MCP Server for AWS CLI integration,
+      command execution, and AWS resource management.
+    tasks:
+
+      # AWS CLI Documentation
+      - id: aws_cli_help
+        name: AWS CLI Help
+        description: Get detailed help information for AWS CLI commands and services
+        command: describe_command
+        examples:
+          - "Get S3 service documentation"
+          - "Get EC2 describe-instances command help"
+          - "Get IAM policy creation documentation"
+
+      # AWS CLI Command Execution
+      - id: aws_cli_execute
+        name: AWS CLI Execute
+        description: Execute AWS CLI commands with formatted output and Unix pipe support
+        command: execute_command
+        examples:
+          - "aws s3 ls"
+          - "aws ec2 describe-instances --region us-west-2"
+          - "aws s3api list-buckets --query 'Buckets[*].Name' --output text | sort"
+
+      # AWS Resources Context
+      - id: aws_profiles
+        name: AWS Profiles
+        description: List available AWS profiles and current active profile
+        resource: aws://config/profiles
+        examples:
+          - "List all configured AWS profiles"
+          - "Show current active profile"
+
+      - id: aws_regions
+        name: AWS Regions
+        description: List available AWS regions and current active region
+        resource: aws://config/regions
+        examples:
+          - "List all AWS regions"
+          - "Show current active region"
+
+      - id: aws_region_details
+        name: AWS Region Details
+        description: Get detailed information about a specific AWS region
+        resource: aws://config/regions/{region}
+        examples:
+          - "Get details for us-east-1 region"
+          - "Show availability zones for us-west-2"
+
+      - id: aws_environment
+        name: AWS Environment
+        description: Get current AWS environment details and credentials
+        resource: aws://config/environment
+        examples:
+          - "Show current AWS environment variables"
+          - "Display credential configuration"
+
+      - id: aws_account
+        name: AWS Account Info
+        description: Get current AWS account information
+        resource: aws://config/account
+        examples:
+          - "Show current AWS account ID"
+          - "Display account alias and organization info"
+
+      # Prompt Templates for Common AWS Tasks
+      - id: create_resource
+        name: Create AWS Resource
+        description: Create AWS resources with comprehensive security settings
+        prompt_template: create_resource
+        examples:
+          - "Create EC2 instance with security best practices"
+          - "Set up S3 bucket with proper permissions"
+
+      - id: resource_inventory
+        name: Resource Inventory
+        description: Create detailed resource inventories across regions
+        prompt_template: resource_inventory
+        examples:
+          - "Inventory all EC2 instances across regions"
+          - "List all S3 buckets with metadata"
+
+      - id: troubleshoot_service
+        name: Troubleshoot Service
+        description: Perform systematic service issue diagnostics
+        prompt_template: troubleshoot_service
+        examples:
+          - "Diagnose EC2 connectivity issues"
+          - "Troubleshoot S3 access problems"
+
+      - id: security_audit
+        name: Security Audit
+        description: Perform comprehensive service security audits
+        prompt_template: security_audit
+        examples:
+          - "Audit IAM policies for security issues"
+          - "Check S3 bucket security settings"
+
+      - id: security_posture_assessment
+        name: Security Posture Assessment
+        description: Evaluate overall AWS security posture
+        prompt_template: security_posture_assessment
+        examples:
+          - "Assess account security posture"
+          - "Review security group configurations"
+
+      - id: iam_policy_generator
+        name: IAM Policy Generator
+        description: Generate least-privilege IAM policies
+        prompt_template: iam_policy_generator
+        examples:
+          - "Generate policy for S3 read access"
+          - "Create EC2 management policy"
+
+      - id: compliance_check
+        name: Compliance Check
+        description: Verify compliance with regulatory standards
+        prompt_template: compliance_check
+        examples:
+          - "Check HIPAA compliance settings"
+          - "Verify PCI DSS requirements"
+
+      - id: cost_optimization
+        name: Cost Optimization
+        description: Find and implement cost optimization opportunities
+        prompt_template: cost_optimization
+        examples:
+          - "Identify unused EC2 instances"
+          - "Optimize S3 storage classes"
+
+      - id: resource_cleanup
+        name: Resource Cleanup
+        description: Safely clean up unused resources
+        prompt_template: resource_cleanup
+        examples:
+          - "Remove unused security groups"
+          - "Clean up old snapshots"
+
+      - id: performance_tuning
+        name: Performance Tuning
+        description: Optimize performance for specific resources
+        prompt_template: performance_tuning
+        examples:
+          - "Optimize RDS performance"
+          - "Tune Lambda function settings"
+
+      - id: serverless_deployment
+        name: Serverless Deployment
+        description: Deploy serverless applications with best practices
+        prompt_template: serverless_deployment
+        examples:
+          - "Deploy Lambda function with API Gateway"
+          - "Set up Step Functions workflow"
+
+      - id: container_orchestration
+        name: Container Orchestration
+        description: Set up container environments (ECS/EKS)
+        prompt_template: container_orchestration
+        examples:
+          - "Deploy ECS cluster"
+          - "Set up EKS with proper networking"
+
+      - id: vpc_network_design
+        name: VPC Network Design
+        description: Design and deploy secure VPC networking
+        prompt_template: vpc_network_design
+        examples:
+          - "Create multi-AZ VPC"
+          - "Set up VPN connection"
+
+      - id: infrastructure_automation
+        name: Infrastructure Automation
+        description: Automate infrastructure management
+        prompt_template: infrastructure_automation
+        examples:
+          - "Set up CloudFormation stacks"
+          - "Create automated backups"
+
+      - id: multi_account_governance
+        name: Multi-Account Governance
+        description: Implement secure multi-account strategies
+        prompt_template: multi_account_governance
+        examples:
+          - "Set up AWS Organizations"
+          - "Configure cross-account access"
+
+      - id: service_monitoring
+        name: Service Monitoring
+        description: Configure comprehensive service monitoring
+        prompt_template: service_monitoring
+        examples:
+          - "Set up CloudWatch alarms"
+          - "Configure log aggregation"
+
+      - id: disaster_recovery
+        name: Disaster Recovery
+        description: Implement enterprise-grade DR solutions
+        prompt_template: disaster_recovery
+        examples:
+          - "Set up cross-region replication"
+          - "Create backup strategies"
+
+# Configuration
+server_name: "aws-mcp-server"
+docker_image: "ghcr.io/alexei-led/aws-mcp-server:latest"
+transport_protocol: "stdio"
+authentication: "AWS CLI credentials"

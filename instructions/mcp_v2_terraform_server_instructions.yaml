@@ -1,0 +1,68 @@
+# .cursor/instructions/evaluate_tools_for_workflow_chatgpt_instructions.yaml
+# Template for asking ChatGPT/Copilot to design workflows, tasks, and integrations
+# when evaluating new tools and MCP servers.
+# TODO: personal: Prompts section (like in your tool_integration file) so you can say “Generate tasks.json from this YAML” or “Explore dev techniques from this YAML.”
+
+name: Tool Integration Prompts
+description: >
+  Reusable prompts for generating VS Code tasks and developer workflows
+  from this YAML guide. Replace TOOL_NAME with the MCP server or tool you are evaluating.
+
+prompts:
+  - name: Generate VS Code tasks.json
+    description: >
+      Generate a VS Code tasks.json file with tasks for TOOL_NAME using the framework
+      in .cursor/instructions/evaluate_tools_for_workflow_chatgpt_instructions.yaml.
+      Include tasks for evaluate expression, plan module, drift check, and validate SCPs.
+    prompt: >
+      Use the instructions in .cursor/instructions/evaluate_tools_for_workflow_chatgpt_instructions.yaml
+      to generate a VS Code tasks.json for TOOL_NAME. Focus on producing runnable JSON tasks.
+
+  - name: Explore developer techniques
+    description: >
+      Apply this YAML guide to TOOL_NAME and give me developer techniques plus
+      suggested VS Code tasks that improve my workflow and help me work differently.
+    prompt: >
+      Use the instructions in .cursor/instructions/evaluate_tools_for_workflow_chatgpt_instructions.yaml
+      to produce new developer techniques, workflows, and task suggestions for TOOL_NAME.
+
+---
+
+name: Tool Integration Exploration
+description: >
+  Template for asking ChatGPT/Copilot to help design better workflows, developer loops,
+  and integration patterns when evaluating new tools.
+
+instructions:
+  - name: Capture context
+    description: >
+      When given one or more tools, understand their purpose, ecosystem, and common workflows.
+
+  - name: Generate developer techniques
+    description: >
+      Suggest ways the tool could be used to improve daily development experience
+      (REPL loops, refactor support, unit/integration testing, drift detection, scaffolding, etc.).
+
+  - name: Map to IDE/assistant integration
+    description: >
+      Propose tasks that can be wired into IDEs (like Cursor or VS Code),
+      Copilot instructions, or MCP servers. Use clear, repeatable instructions
+      in YAML format.
+
+  - name: Surface platform/architectural value
+    description: >
+      Highlight opportunities for security checks, guardrails, automation,
+      or cross-system validation that the tool enables.
+
+  - name: Produce practical output
+    description: >
+      Output recommendations as either:
+      1. A Markdown/YAML task guide (for humans + Copilot),
+      2. A developer workflow ("day in the life" loop),
+      3. Example `tasks.json` entries or MCP config stubs.
+
+  - name: Adapt to refactors
+    description: >
+      If the tool replaces an existing hard-coded dependency or is part of
+      a platform refactor (e.g., IPAM, AFT, IAM boundaries), provide concrete
+      checks or validations that reduce risk while migrating.

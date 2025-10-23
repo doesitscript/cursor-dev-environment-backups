@@ -1,0 +1,244 @@
+# Terraform MCP Server Capabilities
+# Provides Terraform operations and AWS provider integration through Model Context Protocol
+
+task_groups:
+  - name: Terraform MCP Server
+    description: >
+      Capabilities provided by the Terraform MCP Server for AWS Infrastructure as Code (IaC)
+      workflows, including Terraform operations and AWS provider documentation.
+    tasks:
+
+      # Core Terraform Operations
+      - id: terraform_init
+        name: Terraform Init
+        description: Initialize providers and modules for the current project
+        command: terraform init
+        examples:
+          - "Initialize Terraform with AWS provider"
+          - "Download required modules"
+          - "Set up backend configuration"
+
+      - id: terraform_plan
+        name: Terraform Plan
+        description: Generate an execution plan to preview infrastructure changes
+        command: terraform plan -out=tfplan
+        examples:
+          - "Preview changes before applying"
+          - "Generate plan file for review"
+          - "Check what resources will be created/modified"
+
+      - id: terraform_apply
+        name: Terraform Apply
+        description: Apply a saved plan or run directly to deploy changes
+        command: terraform apply tfplan
+        examples:
+          - "Apply saved plan file"
+          - "Deploy infrastructure changes"
+          - "Create AWS resources"
+
+      - id: terraform_destroy
+        name: Terraform Destroy
+        description: Destroy all resources managed by Terraform
+        command: terraform destroy
+        examples:
+          - "Remove all managed resources"
+          - "Clean up infrastructure"
+          - "Delete AWS resources"
+
+      # Code Quality and Validation
+      - id: terraform_fmt
+        name: Terraform Format
+        description: Format Terraform code to standard style
+        command: terraform fmt
+        examples:
+          - "Format all .tf files"
+          - "Standardize code formatting"
+          - "Fix indentation and spacing"
+
+      - id: terraform_validate
+        name: Terraform Validate
+        description: Validate configuration syntax and internal consistency
+        command: terraform validate
+        examples:
+          - "Check syntax errors"
+          - "Validate resource references"
+          - "Verify provider configurations"
+
+      - id: terraform_check
+        name: Terraform Check
+        description: Run Terraform checks for security and best practices
+        command: terraform check
+        examples:
+          - "Run security checks"
+          - "Validate best practices"
+          - "Check for policy violations"
+
+      - id: terraform_evaluate_expression
+        name: MCP Terraform Evaluate Expression
+        description: Send the currently selected Terraform expression to the Terraform MCP server and print the evaluated result inline
+        action: create vscode task
+        examples:
+          - "Evaluate selected Terraform expression"
+          - "Get inline evaluation results"
+          - "Test Terraform expressions interactively"
+
+      # State Management
+      - id: terraform_state_list
+        name: State List
+        description: List resources tracked in Terraform state
+        command: terraform state list
+        examples:
+          - "List all managed resources"
+          - "Show current state"
+          - "Verify resource tracking"
+
+      - id: terraform_state_show
+        name: State Show
+        description: Show details of a specific resource in state
+        command: terraform state show <resource>
+        examples:
+          - "Show EC2 instance details"
+          - "Display S3 bucket configuration"
+          - "View resource attributes"
+
+      - id: terraform_state_rm
+        name: State Remove
+        description: Remove a resource from state (use carefully)
+        command: terraform state rm <resource>
+        examples:
+          - "Remove resource from state"
+          - "Untrack managed resource"
+          - "Handle state drift"
+
+      - id: terraform_state_mv
+        name: State Move
+        description: Move a resource in state to a new address
+        command: terraform state mv <source> <destination>
+        examples:
+          - "Rename resource in state"
+          - "Move resource to module"
+          - "Refactor resource names"
+
+      - id: terraform_state_pull
+        name: State Pull
+        description: Pull current state and output to stdout
+        command: terraform state pull
+        examples:
+          - "Export current state"
+          - "Backup state file"
+          - "Inspect state data"
+
+      # Workspace Management
+      - id: terraform_workspace_list
+        name: Workspace List
+        description: Show available workspaces
+        command: terraform workspace list
+        examples:
+          - "List all workspaces"
+          - "Show current workspace"
+          - "Check workspace status"
+
+      - id: terraform_workspace_select
+        name: Workspace Select
+        description: Switch to a specific workspace
+        command: terraform workspace select <name>
+        examples:
+          - "Switch to dev workspace"
+          - "Select production environment"
+          - "Change active workspace"
+
+      - id: terraform_workspace_new
+        name: Workspace New
+        description: Create a new workspace
+        command: terraform workspace new <name>
+        examples:
+          - "Create staging workspace"
+          - "Add new environment"
+          - "Set up feature branch"
+
+      - id: terraform_workspace_delete
+        name: Workspace Delete
+        description: Delete a workspace
+        command: terraform workspace delete <name>
+        examples:
+          - "Remove old workspace"
+          - "Clean up unused environments"
+          - "Delete feature branch workspace"
+
+      # Import and Output
+      - id: terraform_import
+        name: Import Resource
+        description: Import an existing AWS resource into Terraform state
+        command: terraform import <resource_type>.<name> <resource_id>
+        examples:
+          - "terraform import aws_instance.example i-1234567890abcdef"
+          - "terraform import aws_s3_bucket.example my-bucket"
+          - "Import existing infrastructure"
+
+      - id: terraform_output
+        name: Terraform Output
+        description: Display Terraform outputs
+        command: terraform output
+        examples:
+          - "Show all outputs"
+          - "Display specific output"
+          - "Get resource information"
+
+      - id: terraform_output_json
+        name: Terraform Output JSON
+        description: Display Terraform outputs in JSON format
+        command: terraform output -json
+        examples:
+          - "Get outputs as JSON"
+          - "Export for other tools"
+          - "Machine-readable output"
+
+      # AWS Provider Specific
+      - id: aws_provider_docs
+        name: AWS Provider Documentation
+        description: Access AWS provider resource documentation
+        examples:
+          - "Get EC2 instance documentation"
+          - "View S3 bucket resource options"
+          - "Check IAM policy syntax"
+
+      - id: aws_data_sources
+        name: AWS Data Sources
+        description: Query AWS data sources for resource information
+        examples:
+          - "Get available AMIs"
+          - "Query VPC information"
+          - "Find availability zones"
+
+      - id: aws_modules
+        name: AWS Modules
+        description: Use and manage AWS Terraform modules
+        examples:
+          - "Use VPC module"
+          - "Deploy EKS cluster module"
+          - "Set up RDS module"
+
+      # Security and Compliance
+      - id: terraform_security_scan
+        name: Security Scan
+        description: Run security scans on Terraform code
+        examples:
+          - "Check for security issues"
+          - "Validate IAM policies"
+          - "Scan for vulnerabilities"
+
+      - id: terraform_compliance_check
+        name: Compliance Check
+        description: Verify compliance with standards
+        examples:
+          - "Check HIPAA compliance"
+          - "Validate PCI DSS requirements"
+          - "Ensure security best practices"
+
+# Configuration
+server_name: "terraform-mcp-server"
+docker_image: "hashicorp/terraform-mcp-server"
+transport_protocol: "stdio"
+authentication: "AWS CLI credentials"
+provider_documentation: "Real-time AWS provider docs"
+registry_integration: "Terraform Registry access"

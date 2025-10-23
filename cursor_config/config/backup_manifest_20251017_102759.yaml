@@ -1,0 +1,44 @@
+# Cursor Settings Backup Manifest
+# Generated: 2025-10-17T15:28:00Z
+
+backup_info:
+  timestamp: "20251017_102759"
+  backup_date: "Fri Oct 17 10:28:00 CDT 2025"
+  cursor_version: "1.5.11
+2f2737de9aa376933d975ae30290447c910fdf40
+arm64"
+  system: "Darwin"
+  architecture: "arm64"
+
+backed_up_files:
+  main_settings:
+    - "settings.json"
+    - "keybindings.json"
+  workspace_settings:
+    count: 39
+    location: "workspace_backups/"
+
+source_locations:
+  cursor_user_dir: "/Users/a805120/Library/Application Support/Cursor/User"
+  settings_file: "/Users/a805120/Library/Application Support/Cursor/User/settings.json"
+  keybindings_file: "/Users/a805120/Library/Application Support/Cursor/User/keybindings.json"
+  workspace_storage: "/Users/a805120/Library/Application Support/Cursor/User/workspaceStorage"
+
+backup_locations:
+  config_dir: "/Users/a805120/develop/workflows/scripts/setup/cursor/config"
+  main_settings: "/Users/a805120/develop/workflows/scripts/setup/cursor/config/"
+  workspace_backups: "/Users/a805120/develop/workflows/scripts/setup/cursor/config/workspace_backups/"
+
+restore_instructions:
+  main_settings:
+    - "Copy settings.json to ~/Library/Application Support/Cursor/User/"
+    - "Copy keybindings.json to ~/Library/Application Support/Cursor/User/"
+    - "Restart Cursor IDE"
+  workspace_settings:
+    - "Copy workspace_*.json files to appropriate workspaceStorage subdirectories"
+    - "Restart Cursor IDE"
+
+notes:
+  - "This backup follows the workflows project app setup pattern"
+  - "Files are organized in scripts/setup/cursor/config/"
+  - "Workspace settings are backed up with timestamps for version control"

@@ -1,0 +1,112 @@
+{
+  // Terminal Settings - Force bash instead of zsh/PowerShell
+  "terminal.integrated.defaultProfile.osx": "bash",
+  "terminal.integrated.profiles.osx": {
+    "bash": {
+      "path": "/opt/homebrew/bin/bash",
+      "args": [
+        "-l"
+      ]
+    },
+    "zsh": {
+      "path": "/opt/homebrew/bin/bash",
+      "args": [
+        "-l"
+      ]
+    }
+  },
+  "terminal.integrated.shell.osx": "/opt/homebrew/bin/bash",
+  "terminal.integrated.shellArgs.osx": [
+    "-l"
+  ],
+  "terminal.integrated.automationShell.osx": "/opt/homebrew/bin/bash",
+  "terminal.integrated.inheritEnv": true,
+  "terminal.integrated.showExitAlert": false,
+  "terminal.integrated.confirmOnExit": "never",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  // Navigation and UI Features
+  "breadcrumbs.enabled": true,
+  "editor.minimap.enabled": true,
+  "editor.minimap.showSlider": "always",
+  "editor.minimap.renderCharacters": false,
+  // Code Intelligence
+  "editor.codeLens": true,
+  "editor.hover.enabled": true,
+  "editor.hover.delay": 300,
+  "editor.parameterHints.enabled": true,
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.suggestOnTriggerCharacters": true,
+  // Code Formatting and Display
+  "editor.wordWrap": "on",
+  "editor.wordWrapColumn": 120,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": true,
+  "editor.guides.indentation": true,
+  "editor.renderWhitespace": "boundary",
+  // AI and Suggestions
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.suppressSuggestions": false,
+  "editor.suggest.insertMode": "replace",
+  "editor.acceptSuggestionOnCommitCharacter": true,
+  "editor.acceptSuggestionOnEnter": "on",
+  // Terminal and Panels
+  "terminal.integrated.fontSize": 14,
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.suggest.enabled": true,
+  "terminal.integrated.suggest.showOnInput": true,
+  "terminal.integrated.suggest.showOnInputDelay": 100,
+  "workbench.enableExperiments": true,
+  // File Explorer
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.compactFolders": false,
+  // Git Integration
+  "git.enableSmartCommit": true,
+  "git.confirmSync": false,
+  "git.autofetch": true,
+  // Search
+  "search.exclude": {
+    "**/node_modules": true,
+    "**/bower_components": true,
+    "**/.git": true,
+    "**/dist": true,
+    "**/build": true
+  },
+  // Performance
+  "files.watcherExclude": {
+    "**/.git/objects/**": true,
+    "**/.git/subtree-cache/**": true,
+    "**/node_modules/**": true,
+    "**/dist/**": true,
+    "**/build/**": true
+  },
+  // Editor Behavior
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.rulers": [
+    80,
+    120
+  ],
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": "on",
+  // Workbench
+  "workbench.startupEditor": "welcomePage",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.showTabs": "multiple",
+  "workbench.sideBar.location": "left",
+  // Tips and Help
+  "workbench.tips.enabled": true,
+  "workbench.welcome.enabled": true,
+  "cursor.general.disableHttp2": true,
+  "cursor.general.disableHttp1SSE": true,
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
+  "githubPullRequests.pullBranch": "never",
+  "workbench.colorTheme": "Default Light Modern",
+  "cursor.composer.textSizeScale": 1.15,
+  "git.blame.editorDecoration.enabled": true
+}

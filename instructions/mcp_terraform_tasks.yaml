@@ -1,0 +1,61 @@
+# .cursor/instructions/terraform_mcp_tasks.yaml
+name: Terraform MCP Tasks
+description: VS Code tasks for Terraform MCP server capabilities to improve Terraform development workflow.
+
+instructions:
+  - name: MCP terraform: evaluate expression
+    description: >
+      Send the currently selected Terraform expression to the Terraform MCP server
+      and print the evaluated result inline.
+    action: create vscode task
+
+  - name: MCP terraform: rename resource
+    description: >
+      Update the resource identifier across all .tf files and generate the corresponding
+      `terraform state mv` command to preserve state.
+    action: create vscode task
+
+  - name: MCP terraform: expand module inline
+    description: >
+      Replace the selected module block with the full resource code from its source module.
+    action: create vscode task
+
+  - name: MCP terraform: extract to module
+    description: >
+      Move the selected resource block into a new module folder with main.tf,
+      then replace the block with a module call.
+    action: create vscode task
+
+  - name: MCP terraform: insert providers
+    description: >
+      Scan the current file for undeclared providers and auto-insert required provider blocks.
+    action: create vscode task
+
+  - name: MCP terraform: generate unit tests
+    description: >
+      Produce a test file asserting that outputs or expressions in this module
+      resolve to expected values.
+    action: create vscode task
+
+  - name: MCP terraform: plan module
+    description: >
+      Run terraform plan scoped to the module at the cursor or active file only.
+    action: create vscode task
+
+  - name: MCP terraform: drift check
+    description: >
+      Query AWS via MCP and compare live resource configuration against Terraform state
+      for the selected resource.
+    action: create vscode task
+
+  - name: MCP terraform: validate SCPs
+    description: >
+      List Service Control Policies for the target account and check if they explicitly deny
+      actions required by the selected resource.
+    action: create vscode task
+
+  - name: MCP terraform: check cross-account policies
+    description: >
+      Inspect whether the selected resource would be blocked by SCPs or permission boundaries
+      in target accounts.
+    action: create vscode task

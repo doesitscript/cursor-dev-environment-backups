@@ -1,0 +1,60 @@
+{
+    // Terraform-specific settings
+    "terraform.format.enable": true,
+    "terraform.format.formatOnSave": true,
+    "terraform.languageServer.enable": true,
+    "terraform.languageServer.external": false,
+    "terraform.languageServer.args": [
+        "-disable-telemetry"
+    ],
+    // File associations
+    "files.associations": {
+        "*.tf": "terraform",
+        "*.tfvars": "terraform",
+        "*.tfstate": "json",
+        "*.tfstate.backup": "json"
+    },
+    // Terraform validation
+    "terraform.validation.enable": true,
+    "terraform.validation.enableEnhancedValidation": true,
+    // Auto-completion
+    "terraform.completion.enable": true,
+    "terraform.completion.enableEnhancedCompletion": true,
+    // Hover information
+    "terraform.hover.enable": true,
+    // Code lens
+    "terraform.codeLens.enable": true,
+    "terraform.codeLens.referenceCount": true,
+    // Workspace settings
+    "terraform.workspaceRoot": "/Users/a805120/develop/aft-account-customizations",
+    // Formatting rules
+    "terraform.format.indent": 2,
+    "terraform.format.maxLineLength": 120,
+    // Validation rules
+    "terraform.validation.rules": {
+        "enableEnhancedValidation": true,
+        "enableModuleValidation": true,
+        "enableProviderValidation": true
+    },
+    // MCP Integration
+    "mcp.terraform.enable": true,
+    "mcp.terraform.autoStart": true,
+    "mcp.aws.enable": true,
+    "mcp.aws.autoStart": true,
+    // Git integration for Terraform
+    "git.ignoreLimitWarning": true,
+    "git.autoStash": true,
+    // Search exclusions for Terraform
+    "search.exclude": {
+        "**/.terraform": true,
+        "**/.terraform.lock.hcl": true,
+        "**/terraform.tfstate": true,
+        "**/terraform.tfstate.backup": true,
+        "**/.terraform.tfstate.lock.info": true
+    },
+    // File watcher exclusions
+    "files.watcherExclude": {
+        "**/.terraform/**": true,
+        "**/terraform.tfstate*": true
+    }
+}

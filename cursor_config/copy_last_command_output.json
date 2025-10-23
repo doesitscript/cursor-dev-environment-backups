@@ -1,0 +1,23 @@
+[
+    {
+        "key": "cmd+shift+c",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "workbench.action.terminal.selectAll"
+                },
+                {
+                    "command": "workbench.action.terminal.copySelection"
+                },
+                {
+                    "command": "workbench.action.focusActiveEditorGroup"
+                },
+                {
+                    "command": "editor.action.clipboardPasteAction"
+                }
+            ]
+        },
+        "when": "terminalFocus"
+    }
+]

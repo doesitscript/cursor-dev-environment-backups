@@ -1,0 +1,23 @@
+[
+    {
+        "key": "cmd+shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "${selectedText}\n"
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "cmd+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "${selectedText}\n"
+        },
+        "when": "editorTextFocus"
+    },
+    {
+        "key": "shift+cmd+\\",
+        "command": "workbench.action.terminal.runSelectedText",
+        "when": "terminalProcessSupported"
+    }
+]

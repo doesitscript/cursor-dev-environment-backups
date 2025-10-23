@@ -1,0 +1,1 @@
+give me a list of the terraform mcp server things you can help me with in a copilot instructions readable instructions style that i can store in my project that define and explain the terraform capaibilities for my work in awas that also instructs copilot to create these as tasks group easiliy to identify they are related to the terrraform mcp server

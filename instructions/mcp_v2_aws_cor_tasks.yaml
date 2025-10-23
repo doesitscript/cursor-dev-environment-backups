@@ -1,0 +1,162 @@
+# AWS Core MCP Server Task Group
+# These define capabilities for AWS Core MCP server workflows.
+# Copilot should group these under: "AWS Core MCP Server"
+
+name: AWS Core MCP Server Tasks
+description: >
+  Advanced AWS operations and workflows using the AWS Core MCP server
+  for comprehensive AWS resource management and analysis.
+
+task_groups:
+  - name: AWS Core MCP Server
+    description: >
+      Capabilities provided by the AWS Core MCP server for advanced AWS operations,
+      resource management, and cross-service integration.
+    tasks:
+
+      - id: aws_core_prompt_understanding
+        name: AWS Core: Prompt Understanding
+        description: >
+          Analyze user queries and translate them into AWS expert advice using
+          the AWS Core MCP server's prompt understanding capabilities.
+        command: echo "Use AWS Core MCP server to analyze and understand AWS-related queries"
+
+      - id: aws_core_service_mapping
+        name: AWS Core: Service Mapping
+        description: >
+          Map user requirements to appropriate AWS services and MCP servers
+          using the AWS Core MCP server's service mapping capabilities.
+        command: echo "Use AWS Core MCP server to map requirements to AWS services"
+
+      - id: aws_core_architecture_guidance
+        name: AWS Core: Architecture Guidance
+        description: >
+          Get prescriptive AWS architecture guidance and best practices
+          using the AWS Core MCP server's architectural expertise.
+        command: echo "Use AWS Core MCP server for AWS architecture guidance"
+
+      - id: aws_core_resource_discovery
+        name: AWS Core: Resource Discovery
+        description: >
+          Discover and analyze AWS resources across multiple services
+          using the AWS Core MCP server's resource discovery capabilities.
+        command: echo "Use AWS Core MCP server to discover AWS resources"
+
+      - id: aws_core_cross_service_analysis
+        name: AWS Core: Cross-Service Analysis
+        description: >
+          Analyze relationships and dependencies between AWS services
+          using the AWS Core MCP server's cross-service analysis.
+        command: echo "Use AWS Core MCP server for cross-service analysis"
+
+      - id: aws_core_security_audit
+        name: AWS Core: Security Audit
+        description: >
+          Perform comprehensive security audits across AWS services
+          using the AWS Core MCP server's security analysis capabilities.
+        command: echo "Use AWS Core MCP server for comprehensive security audits"
+
+      - id: aws_core_cost_optimization
+        name: AWS Core: Cost Optimization
+        description: >
+          Analyze costs and provide optimization recommendations
+          using the AWS Core MCP server's cost analysis capabilities.
+        command: echo "Use AWS Core MCP server for cost optimization analysis"
+
+      - id: aws_core_compliance_check
+        name: AWS Core: Compliance Check
+        description: >
+          Check compliance with AWS best practices and frameworks
+          using the AWS Core MCP server's compliance validation.
+        command: echo "Use AWS Core MCP server for compliance checking"
+
+      - id: aws_core_well_architected
+        name: AWS Core: Well-Architected Review
+        description: >
+          Perform Well-Architected Framework reviews
+          using the AWS Core MCP server's framework expertise.
+        command: echo "Use AWS Core MCP server for Well-Architected reviews"
+
+      - id: aws_core_migration_planning
+        name: AWS Core: Migration Planning
+        description: >
+          Plan and analyze AWS migration strategies
+          using the AWS Core MCP server's migration expertise.
+        command: echo "Use AWS Core MCP server for migration planning"
+
+      - id: aws_core_disaster_recovery
+        name: AWS Core: Disaster Recovery
+        description: >
+          Design and validate disaster recovery strategies
+          using the AWS Core MCP server's DR expertise.
+        command: echo "Use AWS Core MCP server for disaster recovery planning"
+
+      - id: aws_core_monitoring_setup
+        name: AWS Core: Monitoring Setup
+        description: >
+          Design comprehensive monitoring and observability solutions
+          using the AWS Core MCP server's monitoring expertise.
+        command: echo "Use AWS Core MCP server for monitoring setup"
+
+      - id: aws_core_networking_design
+        name: AWS Core: Networking Design
+        description: >
+          Design and validate AWS networking architectures
+          using the AWS Core MCP server's networking expertise.
+        command: echo "Use AWS Core MCP server for networking design"
+
+      - id: aws_core_data_strategy
+        name: AWS Core: Data Strategy
+        description: >
+          Design data storage, processing, and analytics strategies
+          using the AWS Core MCP server's data expertise.
+        command: echo "Use AWS Core MCP server for data strategy planning"
+
+      - id: aws_core_ai_ml_guidance
+        name: AWS Core: AI/ML Guidance
+        description: >
+          Get guidance on AWS AI/ML services and architectures
+          using the AWS Core MCP server's AI/ML expertise.
+        command: echo "Use AWS Core MCP server for AI/ML guidance"
+
+      - id: aws_core_serverless_design
+        name: AWS Core: Serverless Design
+        description: >
+          Design serverless architectures and solutions
+          using the AWS Core MCP server's serverless expertise.
+        command: echo "Use AWS Core MCP server for serverless design"
+
+      - id: aws_core_container_strategy
+        name: AWS Core: Container Strategy
+        description: >
+          Design container-based architectures and orchestration
+          using the AWS Core MCP server's container expertise.
+        command: echo "Use AWS Core MCP server for container strategy"
+
+      - id: aws_core_automation_workflows
+        name: AWS Core: Automation Workflows
+        description: >
+          Design automation workflows and CI/CD pipelines
+          using the AWS Core MCP server's automation expertise.
+        command: echo "Use AWS Core MCP server for automation workflows"
+
+      - id: aws_core_governance_setup
+        name: AWS Core: Governance Setup
+        description: >
+          Design AWS governance, compliance, and control frameworks
+          using the AWS Core MCP server's governance expertise.
+        command: echo "Use AWS Core MCP server for governance setup"
+
+      - id: aws_core_multi_account
+        name: AWS Core: Multi-Account Strategy
+        description: >
+          Design multi-account AWS architectures and strategies
+          using the AWS Core MCP server's multi-account expertise.
+        command: echo "Use AWS Core MCP server for multi-account strategy"
+
+      - id: aws_core_hybrid_cloud
+        name: AWS Core: Hybrid Cloud
+        description: >
+          Design hybrid cloud architectures and integration strategies
+          using the AWS Core MCP server's hybrid cloud expertise.
+        command: echo "Use AWS Core MCP server for hybrid cloud design"

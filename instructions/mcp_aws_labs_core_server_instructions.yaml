@@ -1,0 +1,244 @@
+# AWS Labs Core MCP Server Capabilities
+# Provides AWS expert advice and guidance through Model Context Protocol
+
+task_groups:
+  - name: AWS Labs Core MCP Server
+    description: >
+      Capabilities provided by the AWS Labs Core MCP Server for AWS expert advice,
+      best practices guidance, and architectural recommendations.
+    tasks:
+
+      # AWS Expert Guidance
+      - id: aws_expert_advice
+        name: AWS Expert Advice
+        description: Get expert AWS guidance and recommendations
+        examples:
+          - "Get AWS best practices for specific use case"
+          - "Receive architectural recommendations"
+          - "Get expert opinion on AWS services"
+
+      - id: aws_prompt_understanding
+        name: AWS Prompt Understanding
+        description: Understand and translate user queries into AWS expert advice
+        examples:
+          - "Analyze user requirements for AWS solution"
+          - "Translate business needs to AWS services"
+          - "Provide targeted AWS recommendations"
+
+      # Architecture and Design
+      - id: aws_architecture_review
+        name: AWS Architecture Review
+        description: Review and provide feedback on AWS architectures
+        examples:
+          - "Review proposed AWS architecture"
+          - "Identify potential issues and improvements"
+          - "Suggest architectural optimizations"
+
+      - id: aws_well_architected
+        name: AWS Well-Architected
+        description: Apply AWS Well-Architected Framework principles
+        examples:
+          - "Assess against Well-Architected pillars"
+          - "Provide security recommendations"
+          - "Suggest cost optimization strategies"
+
+      - id: aws_service_selection
+        name: AWS Service Selection
+        description: Help select appropriate AWS services for use cases
+        examples:
+          - "Recommend services for specific workloads"
+          - "Compare AWS service options"
+          - "Suggest service combinations"
+
+      # Best Practices and Patterns
+      - id: aws_best_practices
+        name: AWS Best Practices
+        description: Provide AWS best practices for specific scenarios
+        examples:
+          - "Security best practices for EC2"
+          - "Cost optimization for S3"
+          - "Performance tuning for RDS"
+
+      - id: aws_anti_patterns
+        name: AWS Anti-Patterns
+        description: Identify and help avoid AWS anti-patterns
+        examples:
+          - "Identify common AWS mistakes"
+          - "Suggest alternatives to anti-patterns"
+          - "Provide correction guidance"
+
+      - id: aws_design_patterns
+        name: AWS Design Patterns
+        description: Recommend proven AWS design patterns
+        examples:
+          - "Microservices patterns on AWS"
+          - "Data processing patterns"
+          - "Event-driven architecture patterns"
+
+      # Security and Compliance
+      - id: aws_security_guidance
+        name: AWS Security Guidance
+        description: Provide AWS security recommendations and guidance
+        examples:
+          - "IAM security best practices"
+          - "Network security recommendations"
+          - "Data encryption strategies"
+
+      - id: aws_compliance_advice
+        name: AWS Compliance Advice
+        description: Provide compliance guidance for various standards
+        examples:
+          - "HIPAA compliance on AWS"
+          - "PCI DSS requirements"
+          - "SOC 2 compliance guidance"
+
+      - id: aws_risk_assessment
+        name: AWS Risk Assessment
+        description: Assess and provide risk mitigation strategies
+        examples:
+          - "Identify security risks"
+          - "Suggest risk mitigation"
+          - "Provide risk assessment framework"
+
+      # Cost Optimization
+      - id: aws_cost_optimization
+        name: AWS Cost Optimization
+        description: Provide cost optimization strategies and recommendations
+        examples:
+          - "Identify cost savings opportunities"
+          - "Suggest reserved instance strategies"
+          - "Provide cost monitoring recommendations"
+
+      - id: aws_pricing_guidance
+        name: AWS Pricing Guidance
+        description: Provide pricing information and optimization advice
+        examples:
+          - "Compare pricing models"
+          - "Suggest cost-effective alternatives"
+          - "Provide pricing optimization tips"
+
+      # Performance and Scalability
+      - id: aws_performance_optimization
+        name: AWS Performance Optimization
+        description: Provide performance optimization recommendations
+        examples:
+          - "Database performance tuning"
+          - "Application performance optimization"
+          - "Network performance improvements"
+
+      - id: aws_scalability_guidance
+        name: AWS Scalability Guidance
+        description: Provide scalability strategies and recommendations
+        examples:
+          - "Auto-scaling strategies"
+          - "Load balancing recommendations"
+          - "Horizontal scaling approaches"
+
+      # Migration and Modernization
+      - id: aws_migration_guidance
+        name: AWS Migration Guidance
+        description: Provide migration strategies and recommendations
+        examples:
+          - "On-premises to AWS migration"
+          - "Cloud-to-cloud migration"
+          - "Application modernization"
+
+      - id: aws_modernization_advice
+        name: AWS Modernization Advice
+        description: Provide application and infrastructure modernization guidance
+        examples:
+          - "Legacy application modernization"
+          - "Containerization strategies"
+          - "Serverless migration advice"
+
+      # Monitoring and Operations
+      - id: aws_monitoring_strategy
+        name: AWS Monitoring Strategy
+        description: Provide monitoring and observability strategies
+        examples:
+          - "CloudWatch best practices"
+          - "Logging strategies"
+          - "Alerting recommendations"
+
+      - id: aws_operations_guidance
+        name: AWS Operations Guidance
+        description: Provide operational best practices and recommendations
+        examples:
+          - "DevOps practices on AWS"
+          - "Infrastructure as Code strategies"
+          - "Deployment automation"
+
+      # Disaster Recovery and Backup
+      - id: aws_disaster_recovery
+        name: AWS Disaster Recovery
+        description: Provide disaster recovery strategies and recommendations
+        examples:
+          - "DR planning and implementation"
+          - "Backup strategies"
+          - "Business continuity planning"
+
+      - id: aws_backup_strategies
+        name: AWS Backup Strategies
+        description: Provide backup and recovery recommendations
+        examples:
+          - "Data backup strategies"
+          - "Recovery time objectives"
+          - "Backup testing procedures"
+
+      # Multi-Account and Governance
+      - id: aws_multi_account_strategy
+        name: AWS Multi-Account Strategy
+        description: Provide multi-account architecture guidance
+        examples:
+          - "AWS Organizations best practices"
+          - "Account structure recommendations"
+          - "Cross-account access strategies"
+
+      - id: aws_governance_guidance
+        name: AWS Governance Guidance
+        description: Provide governance and compliance recommendations
+        examples:
+          - "Policy management strategies"
+          - "Resource tagging best practices"
+          - "Compliance monitoring"
+
+      # Service-Specific Guidance
+      - id: aws_compute_guidance
+        name: AWS Compute Guidance
+        description: Provide compute service recommendations
+        examples:
+          - "EC2 instance selection"
+          - "Lambda best practices"
+          - "Container service guidance"
+
+      - id: aws_storage_guidance
+        name: AWS Storage Guidance
+        description: Provide storage service recommendations
+        examples:
+          - "S3 storage class selection"
+          - "EBS optimization"
+          - "Data lifecycle management"
+
+      - id: aws_database_guidance
+        name: AWS Database Guidance
+        description: Provide database service recommendations
+        examples:
+          - "RDS vs DynamoDB selection"
+          - "Database migration strategies"
+          - "Performance optimization"
+
+      - id: aws_networking_guidance
+        name: AWS Networking Guidance
+        description: Provide networking service recommendations
+        examples:
+          - "VPC design best practices"
+          - "Load balancer selection"
+          - "CDN optimization"
+
+# Configuration
+server_name: "aws-labs-core-mcp-server"
+transport_protocol: "stdio"
+expertise_level: "AWS Expert"
+coverage_areas: "All AWS services and best practices"
+guidance_framework: "AWS Well-Architected Framework"
+compliance_standards: "HIPAA, PCI DSS, SOC 2, ISO 27001"

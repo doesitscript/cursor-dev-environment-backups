@@ -1,0 +1,227 @@
+# Time MCP Server Capabilities
+# Provides time-related functions and utilities through Model Context Protocol
+
+task_groups:
+  - name: Time MCP Server
+    description: >
+      Capabilities provided by the Time MCP Server for time-related operations,
+      date/time calculations, and temporal utilities.
+    tasks:
+
+      # Current Time Operations
+      - id: get_current_time
+        name: Get Current Time
+        description: Get the current date and time in various formats
+        examples:
+          - "Get current UTC time"
+          - "Get current local time"
+          - "Get timestamp in specific format"
+
+      - id: get_current_date
+        name: Get Current Date
+        description: Get the current date in various formats
+        examples:
+          - "Get current date (YYYY-MM-DD)"
+          - "Get current date in different locales"
+          - "Get day of week"
+
+      - id: get_current_timestamp
+        name: Get Current Timestamp
+        description: Get current Unix timestamp
+        examples:
+          - "Get Unix timestamp"
+          - "Get millisecond timestamp"
+          - "Get nanosecond timestamp"
+
+      # Time Zone Operations
+      - id: get_timezone_info
+        name: Get Timezone Info
+        description: Get information about timezones
+        examples:
+          - "List available timezones"
+          - "Get timezone offset"
+          - "Convert between timezones"
+
+      - id: convert_timezone
+        name: Convert Timezone
+        description: Convert time between different timezones
+        examples:
+          - "Convert UTC to EST"
+          - "Convert local time to UTC"
+          - "Convert between arbitrary timezones"
+
+      # Date/Time Calculations
+      - id: add_time
+        name: Add Time
+        description: Add time duration to a date/time
+        examples:
+          - "Add 1 hour to current time"
+          - "Add 30 days to date"
+          - "Add weeks/months/years"
+
+      - id: subtract_time
+        name: Subtract Time
+        description: Subtract time duration from a date/time
+        examples:
+          - "Subtract 2 hours from time"
+          - "Subtract days from date"
+          - "Calculate time differences"
+
+      - id: time_difference
+        name: Time Difference
+        description: Calculate difference between two dates/times
+        examples:
+          - "Calculate days between dates"
+          - "Get time elapsed"
+          - "Find duration between timestamps"
+
+      # Date/Time Parsing and Formatting
+      - id: parse_date
+        name: Parse Date
+        description: Parse date/time strings into structured format
+        examples:
+          - "Parse ISO 8601 date"
+          - "Parse custom date format"
+          - "Handle various date formats"
+
+      - id: format_date
+        name: Format Date
+        description: Format date/time into specific string format
+        examples:
+          - "Format as ISO 8601"
+          - "Format as readable string"
+          - "Custom date formatting"
+
+      # Calendar Operations
+      - id: get_calendar_info
+        name: Get Calendar Info
+        description: Get calendar-related information
+        examples:
+          - "Get days in month"
+          - "Check if year is leap year"
+          - "Get week number"
+
+      - id: get_holidays
+        name: Get Holidays
+        description: Get holiday information for dates
+        examples:
+          - "Check if date is holiday"
+          - "Get holidays in month/year"
+          - "Get next holiday"
+
+      # Relative Time Operations
+      - id: get_relative_time
+        name: Get Relative Time
+        description: Get human-readable relative time
+        examples:
+          - "Get '2 hours ago' format"
+          - "Get 'in 3 days' format"
+          - "Human-readable time differences"
+
+      - id: get_time_ago
+        name: Get Time Ago
+        description: Calculate time ago from current time
+        examples:
+          - "Get time since timestamp"
+          - "Calculate age from birthdate"
+          - "Time elapsed since event"
+
+      # Scheduling and Recurring Operations
+      - id: get_next_occurrence
+        name: Get Next Occurrence
+        description: Get next occurrence of recurring time
+        examples:
+          - "Next Monday"
+          - "Next month end"
+          - "Next business day"
+
+      - id: get_previous_occurrence
+        name: Get Previous Occurrence
+        description: Get previous occurrence of recurring time
+        examples:
+          - "Previous Friday"
+          - "Last month start"
+          - "Previous business day"
+
+      # Business Time Operations
+      - id: is_business_day
+        name: Is Business Day
+        description: Check if date is a business day
+        examples:
+          - "Check if today is business day"
+          - "Check specific date"
+          - "Exclude holidays"
+
+      - id: get_business_days
+        name: Get Business Days
+        description: Calculate business days between dates
+        examples:
+          - "Business days in month"
+          - "Business days between dates"
+          - "Exclude weekends and holidays"
+
+      # Time Validation
+      - id: validate_date
+        name: Validate Date
+        description: Validate if date/time is valid
+        examples:
+          - "Check if date exists"
+          - "Validate date format"
+          - "Check date ranges"
+
+      - id: is_valid_timezone
+        name: Is Valid Timezone
+        description: Check if timezone is valid
+        examples:
+          - "Validate timezone string"
+          - "Check timezone support"
+          - "Verify timezone format"
+
+      # Utility Operations
+      - id: get_epoch_time
+        name: Get Epoch Time
+        description: Get Unix epoch time
+        examples:
+          - "Get current epoch"
+          - "Convert date to epoch"
+          - "Get epoch for specific time"
+
+      - id: from_epoch_time
+        name: From Epoch Time
+        description: Convert epoch time to date/time
+        examples:
+          - "Convert epoch to date"
+          - "Convert timestamp to readable format"
+          - "Parse Unix timestamp"
+
+      - id: get_weekday
+        name: Get Weekday
+        description: Get weekday information
+        examples:
+          - "Get day of week"
+          - "Check if weekend"
+          - "Get weekday name"
+
+      - id: get_month_info
+        name: Get Month Info
+        description: Get month-related information
+        examples:
+          - "Get month name"
+          - "Get days in month"
+          - "Get month number"
+
+      - id: get_year_info
+        name: Get Year Info
+        description: Get year-related information
+        examples:
+          - "Check if leap year"
+          - "Get year length"
+          - "Get year information"
+
+# Configuration
+server_name: "time-mcp-server"
+transport_protocol: "stdio"
+timezone_support: "Full timezone database"
+locale_support: "Multiple locales"
+format_support: "ISO 8601, RFC 2822, custom formats"
+calculation_precision: "High precision time calculations"

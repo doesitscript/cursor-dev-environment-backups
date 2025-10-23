@@ -1,0 +1,164 @@
+[
+    {
+        "key": "shift+cmd+c shift+cmd+r",
+        "command": "runCommands",
+        "args": {
+            "commands": [
+                {
+                    "command": "workbench.action.terminal.selectAll"
+                },
+                {
+                    "command": "workbench.action.terminal.copySelection"
+                },
+                {
+                    "command": "workbench.action.focusActiveEditorGroup"
+                },
+                {
+                    "command": "editor.action.clipboardPasteAction"
+                }
+            ]
+        },
+        "when": "terminalFocus"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "workbench.action.terminal.runSelectedText",
+        "when": "terminalProcessSupported && editorTextFocus"
+    },
+    {
+        "key": "alt+cmd+w",
+        "command": "workbench.action.toggleEditorWidths"
+    },
+    {
+        "key": "shift+cmd+c",
+        "command": "-workbench.action.terminal.openNativeConsole",
+        "when": "!terminalFocus"
+    },
+    {
+        "key": "shift+cmd+c shift+cmd+c",
+        "command": "workbench.action.terminal.copyLastCommandAndLastCommandOutput",
+        // "args": {
+        //     "commands": [
+        //         "workbench.action.terminal.copyLastCommandAndLastCommandOutput",
+        //         "cursor.chat.open"
+        //     ],
+        //     "delay": 500
+        // }
+    },
+    {
+        "key": "cmd+l",
+        "command": "composer.startComposerPrompt",
+        "when": "editorTextFocus",
+        "args": {
+            "initialMessage": "explain this code"
+        }
+    },
+    {
+        "key": "cmd+shift+e",
+        "command": "composer.startComposerPrompt",
+        "when": "editorTextFocus",
+        "args": {
+            "initialMessage": "explain"
+        }
+    },
+    {
+        "key": "ctrl+cmd+f5",
+        "command": "workbench.action.debug.run",
+        "when": "debuggersAvailable && debugState != 'initializing'"
+    },
+    {
+        "key": "ctrl+f5",
+        "command": "-workbench.action.debug.run",
+        "when": "debuggersAvailable && debugState != 'initializing'"
+    },
+    {
+        "key": "ctrl+f5",
+        "command": "workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.start",
+        "when": "debuggersAvailable && debugState == 'inactive'"
+    },
+    {
+        "key": "ctrl+shift+f5",
+        "command": "workbench.action.debug.restart",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "shift+cmd+f5",
+        "command": "-workbench.action.debug.restart",
+        "when": "inDebugMode"
+    },
+    {
+        "key": "ctrl+shift+cmd+f5",
+        "command": "workbench.action.debug.disconnect",
+        "when": "focusedSessionIsAttach && inDebugMode"
+    },
+    {
+        "key": "shift+f5",
+        "command": "-workbench.action.debug.disconnect",
+        "when": "focusedSessionIsAttach && inDebugMode"
+    },
+    {
+        "key": "ctrl+f5",
+        "command": "workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "f5",
+        "command": "-workbench.action.debug.continue",
+        "when": "debugState == 'stopped'"
+    },
+    {
+        "key": "shift+cmd+enter",
+        "command": "editor.debug.action.selectionToRepl",
+        "when": "inDebugMode && editorTextFocus"
+    },
+    {
+        "key": "alt+`",
+        "command": "workbench.action.toggleMaximizedPanel",
+        "when": "panelAlignment == 'center' || panelPosition != 'bottom' && panelPosition != 'top'"
+    },
+    {
+        "key": "shift+enter",
+        "command": "workbench.action.terminal.sendSequence",
+        "args": {
+            "text": "\\\r\n"
+        },
+        "when": "terminalFocus"
+    }
+,    {
+        "key": "cmd+k left",
+        "command": "workbench.action.moveEditorLeftInGroup"
+    }
+,    {
+        "key": "cmd+k right",
+        "command": "workbench.action.moveEditorRightInGroup"
+    },
+    {
+        "key": "cmd+k up",
+        "command": "workbench.action.moveEditorUp"
+    },
+    {
+        "key": "cmd+k down",
+        "command": "workbench.action.moveEditorDown"
+    }
+,    {
+        "key": "cmd+k shift+left",
+        "command": "workbench.action.moveEditorToLeftGroup"
+    },
+    {
+        "key": "cmd+k shift+right",
+        "command": "workbench.action.moveEditorToRightGroup"
+    },
+    {
+        "key": "cmd+k shift+up",
+        "command": "workbench.action.moveEditorToAboveGroup"
+    },
+    {
+        "key": "cmd+k shift+down",
+        "command": "workbench.action.moveEditorToBelowGroup"
+    }
+]

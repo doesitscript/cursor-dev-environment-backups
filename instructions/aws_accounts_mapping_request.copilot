@@ -1,0 +1,26 @@
+Create a script that:
+1. Reads my ~/.aws/config file.
+2. For each profile, extract:
+   - Profile name
+   - sso_account_id
+3. Fetch actual AWS account names from AWS Organizations API using available profiles
+4. Output a YAML file at .copilot/accounts.yml in the format:
+
+aws_accounts:
+  "<account_id>":
+    profile: <profile_name>
+    friendly_name: <actual_aws_account_name>
+
+Requirements:
+- Make the script idempotent (overwrite the file if it exists)
+- Use Python 3 with standard library only (no external dependencies)
+- Try multiple AWS profiles to access Organizations API (fallback gracefully)
+- If AWS API is unavailable, use 'Unknown' for friendly_name
+- Organize this script with other AWS scripts, name following patterns for similar grouped scripts/commands
+- Integrate into existing Makefile system for easy access
+
+Usage:
+- Direct: python3 scripts/python/generate_aws_accounts_mapping.py
+- Via Makefile: make -f scripts/Makefile_awsutils aws-accounts-mapping
+
+The script should cross-reference account IDs with actual AWS account names so users can easily identify which profile to use when connecting to specific accounts by their friendly names.

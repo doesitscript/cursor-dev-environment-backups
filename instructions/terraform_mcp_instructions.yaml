@@ -1,0 +1,70 @@
+# Terraform MCP Server Task Group
+# These define capabilities for Terraform workflows in AWS.
+# Copilot should group these under: "Terraform MCP Server"
+
+task_groups:
+  - name: Terraform MCP Server
+    description: >
+      Capabilities provided by the Terraform MCP server for AWS IaC
+      (Infrastructure as Code) workflows.
+    tasks:
+
+      - id: plan
+        name: Terraform Plan
+        description: Generate an execution plan to preview infrastructure changes.
+        command: terraform plan -out=tfplan
+
+      - id: apply
+        name: Terraform Apply
+        description: Apply a saved plan or run directly to deploy changes.
+        command: terraform apply tfplan
+
+      - id: init
+        name: Terraform Init
+        description: Initialize providers and modules for the current project.
+        command: terraform init
+
+      - id: fmt
+        name: Terraform Format
+        description: Format Terraform code to standard style.
+        command: terraform fmt
+
+      - id: validate
+        name: Terraform Validate
+        description: Validate configuration syntax and internal consistency.
+        command: terraform validate
+
+      - id: state_list
+        name: State List
+        description: List resources tracked in Terraform state.
+        command: terraform state list
+
+      - id: state_show
+        name: State Show
+        description: Show details of a specific resource in state.
+        command: terraform state show <resource>
+
+      - id: state_rm
+        name: State Remove
+        description: Remove a resource from state (use carefully).
+        command: terraform state rm <resource>
+
+      - id: workspace_list
+        name: Workspace List
+        description: Show available workspaces.
+        command: terraform workspace list
+
+      - id: workspace_select
+        name: Workspace Select
+        description: Switch to a specific workspace.
+        command: terraform workspace select <name>
+
+      - id: import
+        name: Import Resource
+        description: Import an existing AWS resource into Terraform state.
+        command: terraform import aws_instance.example i-1234567890abcdef
+
+      - id: output
+        name: Terraform Output
+        description: Display Terraform outputs.
+        command: terraform output

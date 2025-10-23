@@ -1,0 +1,170 @@
+{
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "Terraform: Init",
+            "type": "shell",
+            "command": "terraform",
+            "args": [
+                "init"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Terraform: Validate",
+            "type": "shell",
+            "command": "terraform",
+            "args": [
+                "validate"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Terraform: Plan",
+            "type": "shell",
+            "command": "terraform",
+            "args": [
+                "plan"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Terraform: Apply",
+            "type": "shell",
+            "command": "terraform",
+            "args": [
+                "apply"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Terraform: Console",
+            "type": "shell",
+            "command": "terraform",
+            "args": [
+                "console"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": true,
+                "panel": "new"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Terraform: Format",
+            "type": "shell",
+            "command": "terraform",
+            "args": [
+                "fmt",
+                "-recursive"
+            ],
+            "group": "build",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Terraform: TFLint",
+            "type": "shell",
+            "command": "tflint",
+            "args": [
+                "--init",
+                "--recursive"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "Terraform: Checkov Security Scan",
+            "type": "shell",
+            "command": "checkov",
+            "args": [
+                "-d",
+                ".",
+                "--framework",
+                "terraform"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "MCP Terraform: Evaluate Expression",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "Use MCP Terraform server to evaluate highlighted expression"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        },
+        {
+            "label": "MCP Terraform: Drift Check",
+            "type": "shell",
+            "command": "echo",
+            "args": [
+                "Use MCP Terraform server for drift detection"
+            ],
+            "group": "test",
+            "presentation": {
+                "echo": true,
+                "reveal": "always",
+                "focus": false,
+                "panel": "shared"
+            },
+            "problemMatcher": []
+        }
+    ]
+}
