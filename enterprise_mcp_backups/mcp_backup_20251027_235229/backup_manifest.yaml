@@ -1,0 +1,22 @@
+# MCP Backup Manifest
+backup_id: "mcp_backup_20251027_235229"
+backup_date: "2025-10-28T04:52:30Z"
+backup_type: "full_configuration"
+backup_version: "2.0.0"
+backup_status: "COMPLETED"
+
+# Files Backed Up
+files:
+  mcp_json: "YES"
+  trust_loop_rules: "YES"
+  environment_config: "YES"
+  guardrails_config: "YES"
+  verification_makefile: "YES"
+  rules_directory: "YES"
+  manifests_directory: "YES"
+
+# Backup Statistics
+statistics:
+  total_files:       11
+  total_size:  72K
+  backup_duration: "Mon Oct 27 23:52:30 CDT 2025"

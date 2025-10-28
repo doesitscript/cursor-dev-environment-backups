@@ -1,0 +1,164 @@
+# Enterprise Guardrails Configuration
+# Advanced behavior validation system for MCP operations
+# This configuration replaces basic rule enforcement with comprehensive validation
+
+prompts:
+  enforce_best_behavior:
+    description: "Enterprise-grade validation of assistant output before execution"
+    script: |
+      # Comprehensive Pre-Execution Validation
+      Verify before output:
+      - AWS changes explicitly authorized with evidence
+      - Evidence provided for all nontrivial claims
+      - System modifications recorded to manifests
+      - Non-interactive coreutils enforced (rm -f, mv -f, cp -f, mkdir -p)
+      - No Playwright unless explicitly authorized
+      - Security operations logged and audited
+      - Performance claims backed by data
+      - Error handling follows structured format
+      - Compliance requirements met
+      - Rollback procedures documented
+      
+      # Response Contract Validation
+      Validate response structure:
+      - Plan: Clear execution strategy provided
+      - Assumptions: Documented constraints and assumptions
+      - Evidence: Supporting data for all claims
+      - Actions: Specific steps with rationale
+      - Tests: Verification methods specified
+      - Log: Audit trail of operations
+      
+      # Security Validation
+      Security checks:
+      - No unauthorized system access
+      - Sensitive data handling documented
+      - Permission changes logged
+      - Audit trail maintained
+      
+      # Performance Validation
+      Performance checks:
+      - Resource usage documented
+      - Optimization opportunities identified
+      - Bottlenecks acknowledged
+      - Scalability considerations noted
+      
+      Return PASS with details or FAIL with specific violations.
+
+  aws_security_enforcement:
+    description: "AWS-specific security validation and enforcement"
+    script: |
+      # AWS Security Validation
+      AWS operations validation:
+      - Default to read-only operations
+      - Require explicit authorization for modifications
+      - Validate permissions before execution
+      - Log all AWS operations to manifests
+      - Document resource changes
+      - Implement rollback procedures
+      - Audit trail maintenance
+      
+      # Resource Modification Checks
+      Resource change validation:
+      - Explicit user authorization required
+      - Impact assessment documented
+      - Rollback plan provided
+      - Security implications reviewed
+      
+      Return PASS with operation details or FAIL with security violations.
+
+  evidence_requirement_enforcement:
+    description: "Mandatory evidence validation for all claims"
+    script: |
+      # Evidence Requirements
+      Evidence mandatory for:
+      - Performance claims (metrics, benchmarks)
+      - Security assertions (vulnerability assessments)
+      - System state changes (before/after snapshots)
+      - Error diagnoses (logs, traces, reproductions)
+      - Success confirmations (test results, validations)
+      
+      # Evidence Quality Standards
+      Evidence quality checks:
+      - Timestamped and verifiable
+      - Contextually relevant
+      - Sufficient detail for reproduction
+      - Source attribution provided
+      - Validation methodology documented
+      
+      Return PASS with evidence summary or FAIL with missing evidence details.
+
+  system_modification_tracking:
+    description: "Comprehensive tracking of all system modifications"
+    script: |
+      # System Modification Requirements
+      All modifications must be:
+      - Recorded in manifests with timestamps
+      - Authorized explicitly with rationale
+      - Rollback-capable with procedures
+      - Audit-trailed with full history
+      - Impact-assessed with documentation
+      
+      # Manifest Management
+      Manifest requirements:
+      - Unique identifiers for each change
+      - Version control integration
+      - Change approval workflow
+      - Rollback procedure documentation
+      - Impact analysis inclusion
+      
+      Return PASS with modification details or FAIL with tracking violations.
+
+  compliance_validation:
+    description: "Enterprise compliance and audit requirements"
+    script: |
+      # Compliance Requirements
+      Compliance checks:
+      - All operations logged to audit trail
+      - Changes tracked in version-controlled manifests
+      - Rollback procedures documented and tested
+      - Security reviews completed and documented
+      - Performance impact assessed
+      - Error handling procedures followed
+      
+      # Audit Trail Requirements
+      Audit trail must include:
+      - Timestamp of operation
+      - User authorization
+      - Operation details
+      - System state before/after
+      - Error conditions and handling
+      - Performance metrics
+      
+      Return PASS with compliance summary or FAIL with compliance violations.
+
+# Configuration Metadata
+config_version: "2.0.0"
+config_date: "2025-01-27"
+config_status: "ACTIVE"
+config_type: "ENTERPRISE"
+config_scope: "COMPREHENSIVE"
+
+# Integration Settings
+integration:
+  memory_keeper: true
+  chat_history_recorder: true
+  manifest_management: true
+  audit_logging: true
+  compliance_tracking: true
+  performance_monitoring: true
+
+# Security Settings
+security:
+  enforcement_level: "STRICT"
+  audit_all_operations: true
+  require_explicit_authorization: true
+  log_sensitive_operations: true
+  validate_permissions: true
+
+# Performance Settings
+performance:
+  cache_enabled: true
+  optimization_enabled: true
+  monitoring_enabled: true
+  bottleneck_detection: true
+  resource_tracking: true

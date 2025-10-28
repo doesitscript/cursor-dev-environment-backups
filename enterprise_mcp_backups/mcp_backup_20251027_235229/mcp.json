@@ -149,6 +149,21 @@
         "/Users/a805120/develop/workflows/claude/servers/evidence-validator-mcp-server.js"
       ],
       "env": {}
+    },
+    "MCP Guardrail": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/Users/a805120/.mcp-src/mcp-guard/dist/index.js",
+        "[{\"name\":\"MCP Memory Keeper\",\"command\":\"node\",\"args\":[\"/Users/a805120/.mcp-src/mcp-memory-keeper/dist/index.js\"]},{\"name\":\"MCP Chat History Recorder\",\"command\":\"/Users/a805120/.mcp-venv/chatrec/bin/python\",\"args\":[\"-m\",\"src.server\",\"stdio\"],\"cwd\":\"/Users/a805120/.mcp-src/chat-history-recorder-mcp\"}]"
+      ],
+      "env": {
+        "DESCRIPTION": "Proxy that wraps MCP servers; policy/rules (wrapped)",
+        "GITHUB_REPO": "https://github.com/General-Analysis/mcp-guard",
+        "TRANSPORT_TYPE": "stdio",
+        "RULE_FILES_PATH": "/Users/a805120/.mcp/rules",
+        "MCP_RULEGUARD_LOG_DIR": "/Users/a805120/.mcp/rule-logs"
+      }
     }
   }
 }
