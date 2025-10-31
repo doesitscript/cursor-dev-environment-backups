@@ -1,0 +1,64 @@
+{
+    "rule_name": "cli-knowledge-leverage",
+    "description": "Automatically enforce checking command-line tooling instructions when CLI issues arise",
+    "triggers": [
+        {
+            "type": "command_error",
+            "patterns": [
+                "ps: illegal argument",
+                "ps: illegal option",
+                "command not found",
+                "syntax error",
+                "invalid option"
+            ]
+        },
+        {
+            "type": "tool_usage",
+            "patterns": [
+                "ps aux",
+                "ps -ef",
+                "find.*-exec.*grep"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "enforce_check",
+            "target": "workflows/.cursor/instructions/command-line-tooling/",
+            "message": "Check command-line tooling instructions for documented solutions before improvising"
+        },
+        {
+            "type": "reference_documentation",
+            "files": [
+                "process-management.md",
+                "troubleshooting-log.md",
+                "find-grep-patterns.md"
+            ]
+        }
+    ],
+    "enforcement": {
+        "level": "mandatory",
+        "block_improvisation": true,
+        "require_documentation_check": true
+    },
+    "examples": {
+        "ps_command_issues": {
+            "problem": "ps aux fails on macOS",
+            "solution": "Use ps -A instead (documented in process-management.md)",
+            "pattern": "Check OS-specific syntax differences"
+        },
+        "find_grep_issues": {
+            "problem": "find -exec grep warnings",
+            "solution": "Use grep -r with --include (documented in find-grep-patterns.md)",
+            "pattern": "Prefer grep -r over find -exec grep"
+        }
+    },
+    "philosophy": [
+        "Document issues immediately when troubleshooting",
+        "Create reusable patterns for similar tasks",
+        "Reference previous solutions before reinventing",
+        "Test commands before using in complex workflows",
+        "Avoid repeatedly solving the same problems"
+    ],
+    "last_updated": "2025-01-27"
+}

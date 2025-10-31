@@ -1,0 +1,188 @@
+{
+    "rule_name": "enterprise-trust-loop-behavior-contract",
+    "description": "Enterprise-grade behavior validation enforcing structured response format, AWS read-only operations, evidence requirements, and system modification tracking",
+    "triggers": [
+        {
+            "type": "response_generation",
+            "patterns": [
+                "always"
+            ]
+        },
+        {
+            "type": "aws_operation",
+            "patterns": [
+                "aws.*create",
+                "aws.*modify",
+                "aws.*delete",
+                "terraform.*apply",
+                "terraform.*destroy"
+            ]
+        },
+        {
+            "type": "system_modification",
+            "patterns": [
+                "rm.*",
+                "mv.*",
+                "cp.*",
+                "mkdir.*",
+                "chmod.*",
+                "chown.*"
+            ]
+        },
+        {
+            "type": "playwright_operation",
+            "patterns": [
+                "playwright.*",
+                "browser.*",
+                "page.*",
+                "click.*",
+                "fill.*"
+            ]
+        }
+    ],
+    "actions": [
+        {
+            "type": "enforce_structured_response",
+            "target": "response_format",
+            "message": "Response must follow mandatory 6-part structure: plan → assumptions → evidence → actions → tests → log",
+            "validation": {
+                "required_sections": [
+                    "plan",
+                    "assumptions",
+                    "evidence",
+                    "actions",
+                    "tests",
+                    "log"
+                ],
+                "enforcement": "mandatory"
+            }
+        },
+        {
+            "type": "enforce_aws_readonly",
+            "target": "aws_operations",
+            "message": "AWS operations default to read-only. Explicit authorization required for modifications.",
+            "validation": {
+                "default_mode": "read_only",
+                "require_explicit_authorization": true,
+                "log_all_operations": true
+            }
+        },
+        {
+            "type": "enforce_evidence_requirements",
+            "target": "claims",
+            "message": "All claims must be backed by evidence. No silent success allowed.",
+            "validation": {
+                "mandatory_for": [
+                    "performance_claims",
+                    "security_assertions",
+                    "system_state_changes",
+                    "error_diagnoses",
+                    "success_confirmations"
+                ],
+                "quality_standards": {
+                    "timestamped": true,
+                    "verifiable": true,
+                    "contextually_relevant": true,
+                    "sufficient_detail": true
+                }
+            }
+        },
+        {
+            "type": "enforce_system_tracking",
+            "target": "system_modifications",
+            "message": "All system modifications must be tracked in manifests with rollback procedures.",
+            "validation": {
+                "require_manifest_logging": true,
+                "require_explicit_authorization": true,
+                "require_rollback_capability": true,
+                "require_audit_trail": true
+            }
+        },
+        {
+            "type": "enforce_non_interactive_coreutils",
+            "target": "command_execution",
+            "message": "Use safe command flags: rm -f, mv -f, cp -f, mkdir -p",
+            "validation": {
+                "required_flags": {
+                    "rm": "-f",
+                    "mv": "-f",
+                    "cp": "-f",
+                    "mkdir": "-p"
+                }
+            }
+        },
+        {
+            "type": "enforce_playwright_authorization",
+            "target": "playwright_operations",
+            "message": "Playwright operations require explicit authorization and security review.",
+            "validation": {
+                "require_explicit_authorization": true,
+                "require_documented_use_case": true,
+                "require_security_review": true,
+                "require_audit_logging": true
+            }
+        }
+    ],
+    "enforcement": {
+        "level": "mandatory",
+        "block_improvisation": true,
+        "require_documentation_check": true,
+        "pre_execution_validation": true,
+        "post_execution_audit": true
+    },
+    "integration": {
+        "memory_keeper": {
+            "auto_update": true,
+            "channel": "workflows",
+            "mandatory_save": true
+        },
+        "chat_history_recorder": {
+            "enabled": true,
+            "mandatory_logging": true,
+            "session_tracking": true
+        },
+        "manifest_management": {
+            "enabled": true,
+            "directory": "/Users/a805120/.manifests",
+            "version_control": true
+        }
+    },
+    "compliance": {
+        "audit_logging": true,
+        "version_control": true,
+        "rollback_procedures": true,
+        "security_reviews": true,
+        "performance_monitoring": true
+    },
+    "examples": {
+        "structured_response": {
+            "problem": "Response lacks structure",
+            "solution": "Follow plan → assumptions → evidence → actions → tests → log format",
+            "pattern": "Always provide structured analysis"
+        },
+        "aws_readonly": {
+            "problem": "AWS modification without authorization",
+            "solution": "Default to read-only, require explicit authorization for changes",
+            "pattern": "Ask for explicit permission before AWS modifications"
+        },
+        "evidence_requirements": {
+            "problem": "Claim without evidence",
+            "solution": "Provide timestamped, verifiable evidence for all claims",
+            "pattern": "No silent success - always provide evidence"
+        }
+    },
+    "philosophy": [
+        "Structure all responses for clarity and auditability",
+        "Default to read-only operations for safety",
+        "Require evidence for all claims and assertions",
+        "Track all system modifications with rollback capability",
+        "Use safe command flags to prevent accidental damage",
+        "Require explicit authorization for potentially dangerous operations"
+    ],
+    "last_updated": "2025-01-27",
+    "version": "2.0.0",
+    "status": "ACTIVE"
+}
+
+
+

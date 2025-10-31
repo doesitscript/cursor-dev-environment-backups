@@ -1,0 +1,38 @@
+backup_timestamp: 20251031_184655
+backup_location: /Users/a805120/develop/cursor-dev-environment-backups/mcp_servers
+components_backed_up:
+  - mcp_config: ✅
+  - guardrail_rules: ✅
+  - cli_instructions: ✅
+  - mcp_state: ✅
+  - mcp_sources: ✅
+
+active_mcp_servers:
+  - chrome-devtools
+  - macos-automator
+  - custom-macos-automator
+  - fastmcp
+  - vscode-mcp-server
+  - make-mcp-server
+  - youtube-transcript
+  - mermaid
+  - augments
+  - serena
+  - awslabs.ccapi-mcp-server
+  - terraform-mcp-server
+  - mcp-pandoc
+  - MCP Memory Keeper
+  - MCP Chat History Recorder
+  - MCP Guardrail
+  - Exa Search
+  - github-grep
+  - grep-mcp
+
+guardrail_rules:
+  - cli-knowledge-leverage.json
+
+restoration_notes:
+  - Copy mcp.json to ~/.cursor/
+  - Copy rules to ~/.mcp/rules/
+  - Copy instructions to workflows/.cursor/instructions/
+  - Restart Cursor to reload configuration

@@ -1,0 +1,100 @@
+# 20_mcp_trust_loop.rules — Enterprise Trust Loop and Response Contract
+# SYSTEM DIRECTIVE — BEHAVIOR CONTRACT
+# This file implements comprehensive behavior validation for MCP operations
+# Order: Guardrail Precheck -> Memory Keeper Save -> Chat History Recorder -> attempt_completion
+
+# Core Behavioral Requirements
+- aws read-only unless explicitly asked to change resources
+- evidence required for claims; no silent success
+- no Playwright unless explicitly authorized
+- use non-interactive coreutils
+- structured response format mandatory
+
+# Guard Logic
+Guard:
+IF next tool == henryalps.chat-history-recorder.attempt_completion
+AND previous tool != henryalps.chat-history-recorder.record_chat_history
+THEN call record_chat_history first with final snapshot.
+
+# Response Contract (MANDATORY STRUCTURE)
+Response Contract:
+1) plan - Clear execution strategy
+2) assumptions - Documented assumptions and constraints
+3) evidence - Supporting data for claims
+4) actions - Specific steps taken
+5) tests - Verification methods
+6) log - Audit trail of operations
+
+# AWS Security Enforcement
+AWS_READONLY_ENFORCEMENT:
+- Default to read-only operations
+- Require explicit authorization for resource modifications
+- Log all AWS operations to manifests
+- Validate permissions before execution
+
+# Evidence Requirements
+EVIDENCE_MANDATORY_FOR:
+- Performance claims
+- Security assertions
+- System state changes
+- Error diagnoses
+- Success confirmations
+
+# System Modification Tracking
+SYSTEM_CHANGES_MUST_BE:
+- Recorded in manifests
+- Authorized explicitly
+- Rollback-capable
+- Audit-trailed
+
+# Non-Interactive Coreutils Enforcement
+REQUIRED_FLAGS:
+- rm: -f (force, no prompt)
+- mv: -f (force, no prompt)
+- cp: -f (force, no prompt)
+- mkdir: -p (parents, no error if exists)
+
+# Playwright Authorization
+PLAYWRIGHT_REQUIRES:
+- Explicit user authorization
+- Documented use case
+- Security review
+- Audit logging
+
+# Memory Keeper Integration
+MEMORY_KEEPER_AUTO_UPDATE: 1
+MEMORY_KEEPER_CHANNEL: workflows
+MCP_DEFAULT_CHANNEL: workflows
+
+# Data Directory Configuration
+DATA_DIR: "/Users/a805120/mcp-data/memory-keeper"
+
+# Path Extensions
+PATH_EXTENSIONS: "$HOME/.local/mcp-servers/guardrail:$PATH"
+
+# Verification Requirements
+VERIFICATION_MANDATORY_FOR:
+- Configuration changes
+- System modifications
+- Security operations
+- Data migrations
+
+# Error Handling
+ERROR_RESPONSE_FORMAT:
+- Problem identification
+- Root cause analysis
+- Impact assessment
+- Resolution steps
+- Prevention measures
+
+# Compliance Tracking
+COMPLIANCE_REQUIREMENTS:
+- All operations logged
+- Changes tracked in manifests
+- Rollback procedures documented
+- Security reviews completed
+
+# Last Updated
+LAST_UPDATED: "2025-01-27"
+VERSION: "2.0.0"
+IMPLEMENTATION_STATUS: "ACTIVE"

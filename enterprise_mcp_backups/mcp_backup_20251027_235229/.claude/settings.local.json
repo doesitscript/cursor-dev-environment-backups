@@ -1,0 +1,23 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//Users/a805120/.cursor/**)",
+      "Read(//Users/a805120/.local/mcp-servers/guardrail/**)",
+      "Read(//Users/a805120/.config/workflows/cursorrules.d/**)",
+      "Read(//Users/a805120/.config/workflows/**)",
+      "Read(//Users/a805120/.mcp/rules/**)",
+      "Read(//Users/a805120/Library/LaunchAgents/**)",
+      "Bash(launchctl list:*)",
+      "Bash(find:*)",
+      "Bash(ps:*)",
+      "Read(//Users/a805120/develop/workflows/logs/**)",
+      "Bash(cat /Users/a805120/develop/workflows/logs/mcp-servers-error.log)",
+      "Read(//Users/a805120/develop/workflows/scripts/**)",
+      "Bash(pgrep:*)",
+      "Read(//Users/a805120/**)",
+      "Bash(cat:*)"
+    ],
+    "deny": [],
+    "ask": []
+  }
+}

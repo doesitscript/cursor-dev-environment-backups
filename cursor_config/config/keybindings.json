@@ -160,5 +160,9 @@
     {
         "key": "cmd+k shift+down",
         "command": "workbench.action.moveEditorToBelowGroup"
+    },
+    {
+        "key": "cmd+e",
+        "command": "composerMode.background"
     }
 ]
